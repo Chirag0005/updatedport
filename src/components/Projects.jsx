@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from './Reveal';
 
 const Projects = () => {
   const projects = [
@@ -23,14 +24,17 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24">
       <div className="container mx-auto px-6 max-w-5xl">
-        <h2 className="text-3xl font-bold mb-12 flex items-center gap-4">
-          <span className="text-cyan-400 font-mono text-xl">03.</span> Some Things I've Built
-          <div className="h-[1px] bg-slate-700 flex-1 ml-4"></div>
-        </h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold mb-12 flex items-center gap-4">
+            <span className="text-cyan-400 font-mono text-xl">03.</span> Some Things I've Built
+            <div className="h-[1px] bg-slate-700 flex-1 ml-4"></div>
+          </h2>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="glass p-8 rounded-xl hover:-translate-y-2 transition-transform duration-300 group flex flex-col h-full border border-white/5 relative overflow-hidden">
+            <Reveal key={index} delay={index * 200}>
+            <div className="glass p-8 rounded-xl hover:-translate-y-2 transition-transform duration-300 group flex flex-col h-full border border-white/5 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 blur-[50px] rounded-full group-hover:bg-cyan-500/10 transition-all duration-500"></div>
               
               <div className="flex justify-between items-center mb-6 relative z-10">
@@ -60,6 +64,7 @@ const Projects = () => {
                 ))}
               </ul>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

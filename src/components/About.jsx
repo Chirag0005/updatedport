@@ -1,17 +1,21 @@
 import React from 'react';
+import Reveal from './Reveal';
 
 const About = () => {
   return (
     <section id="about" className="py-24 relative">
       <div className="container mx-auto px-6 max-w-5xl">
-        <h2 className="text-3xl font-bold mb-12 flex items-center gap-4">
-          <span className="text-cyan-400 font-mono text-xl">01.</span> About Me & Education
-          <div className="h-[1px] bg-slate-700 flex-1 ml-4"></div>
-        </h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold mb-12 flex items-center gap-4">
+            <span className="text-cyan-400 font-mono text-xl">01.</span> About Me & Education
+            <div className="h-[1px] bg-slate-700 flex-1 ml-4"></div>
+          </h2>
+        </Reveal>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* About Text */}
-          <div className="glass p-8 rounded-2xl relative overflow-hidden group h-full">
+          <Reveal delay={200}>
+            <div className="glass p-8 rounded-2xl relative overflow-hidden group h-full block">
             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-3xl rounded-full group-hover:bg-cyan-500/20 transition-all duration-500"></div>
             <div className="space-y-4 text-slate-300 text-lg leading-relaxed relative z-10">
               <p>
@@ -26,9 +30,11 @@ const About = () => {
               </p>
             </div>
           </div>
+          </Reveal>
 
           {/* Education Timeline */}
-          <div className="glass p-8 rounded-2xl relative z-10">
+          <Reveal delay={400}>
+            <div className="glass p-8 rounded-2xl relative z-10 block h-full">
             <h3 className="text-xl font-bold text-slate-100 mb-6 font-mono text-cyan-400 border-b border-white/10 pb-4">Education Journey</h3>
             <div className="space-y-8 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
               
@@ -60,6 +66,7 @@ const About = () => {
 
             </div>
           </div>
+          </Reveal>
         </div>
       </div>
     </section>

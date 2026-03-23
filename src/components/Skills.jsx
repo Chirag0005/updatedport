@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from './Reveal';
 
 const Skills = () => {
   const skillCategories = [
@@ -28,15 +29,18 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 bg-slate-900/50">
       <div className="container mx-auto px-6 max-w-5xl">
-        <h2 className="text-3xl font-bold mb-16 flex items-center justify-center gap-4 text-center">
-          <div className="h-[1px] bg-slate-700 flex-1"></div>
-          <span className="text-cyan-400 font-mono text-xl">02.</span> Technical Arsenal
-          <div className="h-[1px] bg-slate-700 flex-1"></div>
-        </h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold mb-16 flex items-center justify-center gap-4 text-center">
+            <div className="h-[1px] bg-slate-700 flex-1"></div>
+            <span className="text-cyan-400 font-mono text-xl">02.</span> Technical Arsenal
+            <div className="h-[1px] bg-slate-700 flex-1"></div>
+          </h2>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="glass p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center group">
+            <Reveal key={index} delay={index * 200}>
+              <div className="glass p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center group h-full">
               <div className="p-4 rounded-full bg-slate-800/80 mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all">
                 {category.icon}
               </div>
@@ -49,6 +53,7 @@ const Skills = () => {
                 ))}
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>
