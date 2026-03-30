@@ -17,9 +17,14 @@ const Hero = () => {
           <p className="text-slate-400 max-w-xl text-lg mb-10 leading-relaxed">
             I'm a 3rd year Computer Science and Engineering student at Lovely Professional University. Currently, I'm focused on full-stack MERN web development and solving complex problems.
           </p>
-          <a href="#projects" className="px-8 py-4 border border-cyan-400 text-cyan-400 rounded hover:bg-cyan-400/10 transition-colors duration-300 font-mono backdrop-blur-sm">
-            Check out my work!
-          </a>
+          <div className="flex flex-wrap gap-4 mt-8">
+            <a href="#projects" className="px-8 py-4 border border-cyan-400 text-cyan-400 rounded hover:bg-cyan-400 hover:text-slate-900 transition-colors duration-300 font-mono backdrop-blur-sm uppercase font-semibold">
+              Check out my work!
+            </a>
+            <a href="/resume.pdf" download className="px-8 py-4 bg-cyan-400 text-slate-900 rounded hover:bg-cyan-300 transition-colors duration-300 font-mono font-semibold uppercase shadow-[0_0_15px_rgba(34,211,238,0.5)]">
+              Download Resume
+            </a>
+          </div>
           </div>
         </Reveal>
         <Reveal delay={300}>
@@ -41,9 +46,9 @@ const Hero = () => {
               <img 
                 src="/profile.png" 
                 alt="Chirag" 
-                className="w-full h-full object-cover object-[center_25%] scale-100 grayscale-[20%] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out"
+                className="w-full h-full object-cover object-[center_25%] scale-100 grayscale-[20%] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out relative z-20"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-10 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-10 transition-opacity duration-500 z-30 pointer-events-none"></div>
             </div>
           </div>
         </div>

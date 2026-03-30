@@ -6,15 +6,21 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
+import Background3D from './components/Background3D';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-cyan-500 selection:text-white">
-      <div className="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black"></div>
+    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-cyan-500 selection:text-white relative overflow-hidden cursor-none md:cursor-auto">
+      <CustomCursor />
+      <div className="fixed inset-0 z-[-2] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black"></div>
       
-      <Navbar />
+      <Background3D />
       
-      <main>
+      <div className="relative z-10">
+        <Navbar />
+        
+        <main>
         <Hero />
         <About />
         <Skills />
@@ -23,9 +29,10 @@ function App() {
         <Contact />
       </main>
 
-      <footer className="py-8 text-center text-slate-400 border-t border-white/5">
-        <p>© {new Date().getFullYear()} Chirag. Built with React & Tailwind CSS.</p>
-      </footer>
+        <footer className="py-8 text-center text-slate-400 border-t border-white/5 relative z-10">
+          <p>© {new Date().getFullYear()} Chirag. Built with React & Tailwind CSS.</p>
+        </footer>
+      </div>
     </div>
   );
 }
